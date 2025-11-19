@@ -224,6 +224,52 @@ function Home({ onNav }) {
     visible: { opacity: 1, y: 0 },
   };
 
+  // Full MarTerra Features list (from your slide)
+  const marTerraFeatures = [
+    {
+      title: "Real-Time Monitoring & Alerts",
+      body:
+        "With cloud connectivity, users get instant alerts for unusual activities — from unauthorized access to motion anomalies or environmental changes.",
+      highlight:
+        "Respond faster, prevent incidents, and reduce risk in real time.",
+    },
+    {
+      title: "Smart Integration Capabilities",
+      body:
+        "Integrates with identity systems (e.g., Okta, Azure AD), environmental monitoring, and access control for unified situational awareness.",
+      highlight:
+        "Gives you a 360° view of your facilities and operations.",
+    },
+    {
+      title: "AI-Powered Intelligence",
+      body:
+        "Verkada leverages machine learning and computer vision to analyze footage, detect anomalies, and identify patterns automatically.",
+      highlight:
+        "Transforms your cameras from passive recorders into proactive detection tools.",
+    },
+    {
+      title: "Scalable & Future-Proof",
+      body:
+        "The system scales effortlessly — add new cameras, sensors, or access points across multiple sites in minutes.",
+      highlight:
+        "Ideal for organizations with multiple facilities, campuses, or expanding operations.",
+    },
+    {
+      title: "Automatic Updates & Continuous Innovation",
+      body:
+        "Verkada delivers regular software and firmware updates automatically — no downtime or manual patching.",
+      highlight:
+        "Your system gets smarter and more secure every month.",
+    },
+    {
+      title: "Reduced Total Cost of Ownership",
+      body:
+        "With no on-prem hardware or maintenance costs, Verkada reduces operational overhead by up to 40%.",
+      highlight:
+        "High performance, lower cost, and faster ROI.",
+    },
+  ];
+
   return (
     <>
       {/* HERO + WHY MARTERRA */}
@@ -237,7 +283,7 @@ function Home({ onNav }) {
           loop
           playsInline
         >
-          <source src="/assets/250801_Partner_Loop%202.mp4" type="video/mp4" />
+          <source src="/assets/HomePageAnimation.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-[#0E1726]/85 via-[#0E1726]/70 to-[#0E1726]" />
@@ -247,65 +293,62 @@ function Home({ onNav }) {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="text-4xl md:text-6xl font-extrabold leading-tight mb-6"
+            className="text-4xl md:text-6xl font-extrabold leading-tight mb-4"
             style={{ fontFamily: "Poppins" }}
           >
-            AI Security Solutions — from Cloud to Coast
+            AI-Powered Physical Security for Modern Infrastructure
           </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: 0.05 }}
-            className="max-w-2xl text-lg text-white/80 mb-10"
-          >
-            Unify video, access control, intercom, sensors and alarms on a
-            single cloud-managed platform. Deploy fast, scale easily, and get
-            proactive, real-time protection.
-          </motion.p>
-
-          {/* WHY MARTERRA SECTION */}
-          <motion.h2
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, ease: "easeOut", delay: 0.08 }}
-            className="text-2xl md:text-4xl font-extrabold mb-3"
-            style={{ fontFamily: "Poppins" }}
-          >
-            Why MarTerra?
-          </motion.h2>
+          {/* Split, more readable hero copy */}
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45, ease: "easeOut", delay: 0.1 }}
-            className="max-w-3xl text-white/70 mb-8"
+            className="max-w-2xl text-white/80 leading-relaxed mb-2"
           >
-            Secure, intelligent, and unified — built for performance,
-            scalability, and real-world outcomes.
+            Transform your security approach with our comprehensive,
+            cloud-based physical AI security solution. Experience a unified
+            platform that offers a range of tailored security services,
+            empowering you to proactively monitor and identify security risks.
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, ease: "easeOut", delay: 0.18 }}
+            className="max-w-2xl text-white/70 leading-relaxed mb-8"
+          >
+            Stay ahead of potential threats as our system continuously enhances
+            its intelligence, providing unparalleled protection and peace of
+            mind. Secure your environment, harnessing the power of AI.
           </motion.p>
 
+          {/* WHY MARTERRA CARDS */}
           <motion.div
             variants={container}
             initial="hidden"
             animate="visible"
-            className="grid gap-6 md:grid-cols-2 lg:grid-cols-4"
+            className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-10"
           >
             {[
               {
                 title: "High Performance, Lower Cost, Faster ROI",
-                desc: "High performance, lower cost, and faster ROI.",
+                desc:
+                  "Deploy quickly, reduce operational cost, and accelerate time-to-value.",
               },
               {
                 title: "Predictive Security",
-                desc: "Proactively detect risks and adapt in real time.",
+                desc:
+                  "AI-powered analytics detect risks earlier and adapt in real time.",
               },
               {
                 title: "Secure Critical Infrastructure",
-                desc: "Modernize your perimeter and access control systems with cloud-based integration.",
+                desc:
+                  "Harden perimeters and access points using unified cloud-based systems.",
               },
               {
                 title: "Protect High-Value Assets",
-                desc: "Safeguard operations through AI analytics, automation, and intelligence.",
+                desc:
+                  "Protect people, property, and operations with intelligence and automation.",
               },
             ].map((itemData, i) => (
               <motion.div
@@ -313,47 +356,22 @@ function Home({ onNav }) {
                 variants={item}
                 className="rounded-2xl bg-white/10 border border-white/15 p-6 hover:bg-white/15 transition-colors"
               >
-                <div
-                  className="font-semibold text-white/90 mb-2"
-                  style={{ fontFamily: "Poppins" }}
-                >
+                <div className="font-semibold text-white/90">
                   {itemData.title}
                 </div>
-                <p className="text-sm text-white/70 leading-snug">
+                <p className="mt-2 text-sm text-white/70 leading-snug">
                   {itemData.desc}
                 </p>
               </motion.div>
             ))}
           </motion.div>
 
-          {/* This block is now ONLY Security & Compliance + CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, ease: "easeOut", delay: 0.2 }}
-            className="mt-10 text-sm text-white/60 max-w-3xl"
-          >
-            <p className="mt-2">
-              Security &amp; Compliance — Achieve modernization without
-              disruption, while integrating legacy systems.
-            </p>
-            <a
-              href="#about"
-              className="inline-flex items-center text-[#2771E9] font-semibold mt-3 hover:underline"
-              onClick={(e) => {
-                e.preventDefault();
-                onNav("about");
-              }}
-            >
-              Learn more about us →
-            </a>
-          </motion.div>
-
+          {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45, ease: "easeOut", delay: 0.25 }}
-            className="mt-10 flex gap-4"
+            className="mt-4 flex flex-wrap gap-4"
           >
             <a
               className="rounded-xl bg-[#2771E9] px-5 py-3 font-semibold hover:bg-[#3A88FF] transition-colors"
@@ -368,6 +386,41 @@ function Home({ onNav }) {
               Free Security Audit
             </a>
           </motion.div>
+
+          {/* MarTerra Features (full list) */}
+          <section className="mt-16 rounded-3xl bg-white/5 border border-white/10 p-8">
+            <h3
+              className="text-xl md:text-2xl font-extrabold text-white"
+              style={{ fontFamily: "Poppins" }}
+            >
+              MarTerra Features
+            </h3>
+            <p className="mt-2 text-sm md:text-base text-white/70 max-w-3xl">
+              Built on a unified, cloud-connected platform, MarTerra combines
+              real-time visibility, AI, and smart integrations to give you a
+              continuously improving security posture.
+            </p>
+
+            <div className="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              {marTerraFeatures.map((feature) => (
+                <div
+                  key={feature.title}
+                  className="rounded-2xl bg-white/5 border border-white/10 p-5"
+                >
+                  <div className="text-sm font-semibold text-white mb-1">
+                    {feature.title}
+                  </div>
+                  <p className="text-sm text-white/80 leading-relaxed">
+                    {feature.body}
+                  </p>
+                  <p className="mt-3 text-sm text-[#9CC4FF] flex items-start gap-2">
+                    <span>➡️</span>
+                    <span>{feature.highlight}</span>
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
         </div>
       </section>
 
@@ -445,6 +498,7 @@ function Home({ onNav }) {
     </>
   );
 }
+
 
 /* ===========================
    About Page
